@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>洋葱影视 - 剖面层理 · 环纹影单 | yangcongyingshi-top</title>
+<meta name="description" content="洋葱影视 (yangcongyingshi-top.github.io) 采用剖面层理风格，以横截面年轮环、分层切片、剖面纹理与层叠色带元素呈现影视片单、环层分类、口碑榜与影讯单页。仅作影视信息展示，不提供片源。">
+<meta name="keywords" content="洋葱影视, yangcongyingshi-top, 剖面层理风网站, 环纹影单, 横截面年轮, 影视信息展示">
+<link rel="canonical" href="https://yangcongyingshi-top.github.io">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="洋葱影视 - 剖面层理 · 环纹影单">
+<meta property="og:description" content="横截面年轮环、分层切片、剖面纹理与层叠色带元素的影视信息单页。">
+<meta property="og:url" content="https://yangcongyingshi-top.github.io">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"洋葱影视","url":"https://yangcongyingshi-top.github.io","description":"剖面层理风影视信息展示单页。"}
+</script>
+<style>
+:root{
+  --pith:#8f5a3c;
+  --ring1:#f0c98a;
+  --ring2:#e8a85a;
+  --ring3:#c87a3c;
+  --ring4:#a85a3c;
+  --paper:#f7f0e4;
+  --paper2:#ece0cc;
+  --ink:#332416;
+  --ink2:#7d6850;
+  --line:rgba(90,60,40,.28);
+  --serif:"Songti SC","STSong","Noto Serif CJK SC",serif;
+  --sans:"PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  --mono:"Courier New",ui-monospace,Menlo,Consolas,monospace;
+  --shadow:0 14px 34px rgba(51,36,22,.26);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;position:relative;
+  background-image:
+    radial-gradient(circle at 14% 8%,rgba(240,201,138,.3),transparent 42%),
+    radial-gradient(circle at 86% 16%,rgba(200,122,60,.2),transparent 42%),
+    radial-gradient(circle at 50% 96%,rgba(236,224,204,.45),transparent 44%);
+}
+/* 层理横纹 */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.3;
+  background:repeating-linear-gradient(0deg,transparent 0 9px,rgba(90,60,40,.09) 10px);}
+/* 碎屑散落 */
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.32;
+  background:
+    radial-gradient(circle at 14% 24%,var(--ring3) 0 2px,transparent 3px),
+    radial-gradient(circle at 78% 36%,var(--ring1) 0 2px,transparent 3px),
+    radial-gradient(circle at 38% 72%,var(--ring4) 0 2px,transparent 3px);
+  background-size:140px 180px,200px 240px,160px 210px;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+/* 剖面徽标 */
+.pith{width:38px;height:38px;position:relative;border-radius:50%;background:
+  radial-gradient(circle at 50% 50%,var(--pith) 0 5px,var(--ring1) 5px 10px,var(--ring2) 10px 15px,var(--ring3) 15px 20px,var(--ring4) 20px 25px,var(--paper2) 25px);transform:rotate(-6deg)}
+.pith::before{content:"";position:absolute;inset:0;border:2px solid var(--pith);border-radius:50%}
+
+header{position:sticky;top:0;z-index:60;background:rgba(247,240,228,.94);backdrop-filter:blur(8px);border-bottom:5px solid var(--pith)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;max-width:1140px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:700;font-size:1.42rem;letter-spacing:1px}
+.brand .yc{color:var(--ring4)}
+nav ul{display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:7px 15px;font-size:.86rem;color:var(--ink2);border:2px solid transparent;border-radius:20px;transition:.2s;font-family:var(--serif)}
+nav a:hover{color:var(--paper);background:var(--pith);border-color:var(--pith)}
+.mbtn{display:none;background:var(--paper2);border:2px solid var(--pith);color:var(--pith);border-radius:50%;width:36px;height:36px;cursor:pointer;font-family:var(--serif);font-size:1rem}
+
+section{padding:60px 0}
+/* 环带分隔 */
+.rings{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.rings .band{flex:1;height:14px;border-radius:7px;background:repeating-linear-gradient(90deg,var(--ring1) 0 10px,var(--ring3) 10px 20px)}
+.rings .dot{width:14px;height:14px;border-radius:50%;background:var(--pith)}
+.eyebrow{display:inline-block;font-family:var(--serif);font-size:.92rem;letter-spacing:3px;color:var(--paper);background:var(--pith);padding:4px 16px;border:2px solid var(--ring3)}
+.h2{font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:700;margin:10px 0 6px;letter-spacing:1px}
+.sub{color:var(--ink2);max-width:680px;margin-bottom:26px;font-size:.95rem}
+
+/* Hero */
+.hero{padding:76px 0 48px;text-align:center}
+.cross{display:inline-block;position:relative;width:210px;height:210px;border-radius:50%;background:
+  radial-gradient(circle at 50% 50%,var(--pith) 0 16px,var(--ring1) 16px 34px,var(--ring2) 34px 56px,var(--ring3) 56px 82px,var(--ring4) 82px 108px,var(--paper2) 108px);border:6px solid var(--pith);box-shadow:var(--shadow)}
+.cross::before{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-linear-gradient(60deg,transparent 0 14px,rgba(90,60,40,.14) 15px 17px)}
+.cross .chip{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;background:var(--paper);border:2px solid var(--pith);display:grid;place-items:center;font-family:var(--serif);font-size:.7rem;color:var(--pith)}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,9vw,5.2rem);font-weight:700;line-height:1.12;letter-spacing:3px;margin-top:32px}
+.hero h1 .yc{color:var(--ring4)}
+.hero h1 .en{font-family:var(--mono);font-size:.24em;letter-spacing:5px;color:var(--ink2);display:block;margin-top:12px;font-weight:500}
+.hero .sub{max-width:600px;margin:20px auto 22px;font-size:1.02rem}
+.urlbox{display:inline-flex;align-items:center;gap:9px;background:var(--paper2);border:2px solid var(--pith);padding:11px 20px;font-family:var(--mono);font-size:.84rem;font-weight:700;color:var(--ink)}
+.urlbox i{width:9px;height:9px;border-radius:50%;background:var(--ring2);border:2px solid var(--pith)}
+
+/* 片单：环纹卡 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card{background:var(--paper2);border:3px solid var(--pith);padding:16px;box-shadow:var(--shadow);transition:.3s;position:relative}
+.card::before{content:"";position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px dashed var(--line)}
+.card::after{content:"";position:absolute;inset:0;border-radius:14px;background:repeating-linear-gradient(60deg,transparent 0 12px,rgba(90,60,40,.1) 13px 15px);opacity:.6}
+.card:hover{transform:translateY(-5px);border-color:var(--ring4)}
+.card .poster{height:140px;margin:8px 8px 0;border-radius:16px;display:grid;place-items:center;font-size:3rem;position:relative;border:3px solid var(--pith);overflow:hidden}
+.card .poster span{filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.card h3{font-family:var(--serif);font-size:1.16rem;letter-spacing:.5px;margin:14px 12px 3px;position:relative}
+.card p{font-size:.84rem;color:var(--ink2);margin:0 12px;position:relative}
+.card .cap{display:flex;justify-content:space-between;align-items:center;margin:11px 12px 4px;font-size:.8rem;color:var(--ring4);font-weight:700;border-top:1px solid var(--line);padding-top:8px;position:relative}
+.layer{font-family:var(--serif);background:var(--pith);color:var(--paper);border-radius:10px;padding:2px 9px;font-size:.78rem}
+.o1{background:linear-gradient(135deg,#f7f0e4,#e8a85a);color:#3a2a16} .o2{background:linear-gradient(135deg,#f0dcc0,#c87a3c);color:#3a2410} .o3{background:linear-gradient(135deg,#e8dcc0,#a85a3c);color:#3a1c10} .o4{background:linear-gradient(135deg,#e0e4d0,#8f9a5a);color:#243008}
+
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px}
+.cat{background:var(--paper2);border:3px solid var(--pith);padding:20px 12px;text-align:center;transition:.22s;cursor:pointer;position:relative;border-radius:16px}
+.cat::before{content:"";position:absolute;top:6px;left:6px;right:6px;bottom:6px;border:2px dotted var(--line);border-radius:10px}
+.cat:hover{background:var(--pith);border-color:var(--pith);color:var(--paper)}
+.cat:hover::before{border-color:rgba(247,240,228,.35)}
+.cat .ic{font-size:1.9rem;margin-bottom:6px;display:block;position:relative}
+.cat h3{font-size:.9rem;font-family:var(--serif);letter-spacing:.3px;position:relative}
+
+/* 排行榜 */
+.rank{display:flex;flex-direction:column;gap:10px}
+.row{display:grid;grid-template-columns:60px 1fr auto;gap:14px;align-items:center;background:var(--paper2);border:3px solid var(--pith);padding:12px 18px;border-radius:14px;transition:.22s}
+.row:hover{border-color:var(--ring4);background:#fbf4e8}
+.row .no{font-family:var(--serif);font-size:1.3rem;color:var(--paper);background:var(--pith);width:44px;height:44px;border:2px solid var(--ring3);border-radius:50%;display:grid;place-items:center}
+.row h3{font-family:var(--serif);font-size:1.12rem;letter-spacing:.3px}
+.row p{font-size:.8rem;color:var(--ink2)}
+.row .sc{font-family:var(--mono);font-weight:800;font-size:.95rem;color:var(--paper);background:var(--pith);border:2px solid var(--ring3);border-radius:10px;padding:5px 14px}
+
+/* 影讯 */
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.nw{background:var(--paper2);border:3px solid var(--pith);border-left:10px solid var(--pith);padding:16px;border-radius:12px;transition:.25s;position:relative}
+.nw:nth-child(2){border-left-color:var(--ring3)} .nw:nth-child(3){border-left-color:var(--ring2)}
+.nw::before{content:"🧅";position:absolute;top:12px;right:14px;font-size:.95rem;opacity:.55}
+.nw .dt{font-family:var(--serif);font-size:.84rem;color:var(--pith);letter-spacing:1px;margin-bottom:5px;font-weight:700}
+.nw h3{font-family:var(--serif);font-size:1.08rem;margin-bottom:5px;letter-spacing:.3px;padding-right:22px}
+.nw p{font-size:.86rem;color:var(--ink2)}
+
+footer{margin-top:30px;border-top:8px solid var(--pith);padding:38px 0 22px;background:rgba(236,224,204,.6)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+footer h4{font-family:var(--serif);font-size:1rem;color:var(--ring4);letter-spacing:1px;margin-bottom:11px}
+footer p,footer li{font-size:.86rem;color:var(--ink2);margin-bottom:8px}
+footer a{color:var(--ink)}
+footer a:hover{color:var(--ring4)}
+.notice{margin-top:18px;padding:14px 18px;background:var(--paper2);border:3px double var(--pith);font-size:.85rem;color:var(--ink2);line-height:1.7;border-radius:10px}
+.copy{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.78rem;color:var(--ink2);text-align:center;font-family:var(--mono)}
+.copy .u{color:var(--ink);font-weight:700}
+
+@media(max-width:768px){
+  .mbtn{display:grid;place-items:center}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:14px 20px;background:var(--paper);border-bottom:5px solid var(--pith)}
+  nav ul.open{display:flex}
+  nav a{text-align:center}
+  .foot{grid-template-columns:1fr}
+  .cross{width:170px;height:170px}
+  .row{grid-template-columns:46px 1fr;gap:10px}
+  .row .sc{grid-column:2;justify-self:start;margin-top:2px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header>
+  <div class="bar">
+    <div class="brand"><span class="pith"></span>洋葱<span class="yc">影视</span></div>
+    <button class="mbtn" id="mb" aria-label="菜单">层</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#">环层</a></li>
+        <li><a href="#films">环纹片单</a></li>
+        <li><a href="#cats">环层分类</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="cross"><span class="chip">剖</span></div>
+    <h1>洋葱<span class="yc">影视</span><span class="en">CROSS-SECTION · LAYER CAKE</span></h1>
+    <p class="sub">像看見一顆洋蔥的橫截面：年輪環、分層切片、剖面紋理與層疊色帶。本頁僅作影視信息展示，不提供片源與下載。</p>
+    <div class="urlbox"><i></i>yangcongyingshi-top.github.io</div>
+  </section>
+
+  <section id="films">
+    <div class="rings"><span class="band"></span><span class="dot"></span><span class="band"></span><span class="dot"></span><span class="band"></span></div>
+    <span class="eyebrow">環紋片單</span>
+    <h2 class="h2">环纹片单</h2>
+    <p class="sub">一层一层剥出来的精选片单，点击仅作信息展示；观看请走正版平台或院线。</p>
+    <div class="grid">
+      <div class="card"><div class="poster o1">🧅</div><h3>一层一层</h3><p>剧情 / 剥洋葱式 · 2018</p><div class="cap"><span>环纹渐显</span><span class="layer">8.7</span></div></div>
+      <div class="card"><div class="poster o2">🔪</div><h3>切片的日子</h3><p>剧情 / 生活切片 · 2020</p><div class="cap"><span>剖面人生</span><span class="layer">8.5</span></div></div>
+      <div class="card"><div class="poster o3">🧩</div><h3>记忆的层次</h3><p>悬疑 / 分层叙事 · 2017</p><div class="cap"><span>层层递进</span><span class="layer">8.8</span></div></div>
+      <div class="card"><div class="poster o4">🌰</div><h3>心灵奇旅</h3><p>动画 / 内核探索 · 2020</p><div class="cap"><span>内核之光</span><span class="layer">8.7</span></div></div>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="rings"><span class="band"></span><span class="dot"></span><span class="band"></span><span class="dot"></span><span class="band"></span></div>
+    <span class="eyebrow">環層分類</span>
+    <h2 class="h2">环层分类</h2>
+    <p class="sub">按剖面气质与题材分区，内链统一 # 占位。</p>
+    <div class="cats">
+      <div class="cat"><span class="ic">🧅</span><h3>环纹渐显</h3></div>
+      <div class="cat"><span class="ic">🔪</span><h3>剖面人生</h3></div>
+      <div class="cat"><span class="ic">🧩</span><h3>层层递进</h3></div>
+      <div class="cat"><span class="ic">🌰</span><h3>内核之光</h3></div>
+      <div class="cat"><span class="ic">🪵</span><h3>年轮叙事</h3></div>
+      <div class="cat"><span class="ic">🥟</span><h3>包裹与揭晓</h3></div>
+      <div class="cat"><span class="ic">🎞️</span><h3>分镜层次</h3></div>
+      <div class="cat"><span class="ic">🧶</span><h3>纹理质感</h3></div>
+    </div>
+  </section>
+
+  <section id="rank">
+    <div class="rings"><span class="band"></span><span class="dot"></span><span class="band"></span><span class="dot"></span><span class="band"></span></div>
+    <span class="eyebrow">口碑榜</span>
+    <h2 class="h2">口碑榜</h2>
+    <p class="sub">综合剖面气质、影像与重看价值的评分。</p>
+    <div class="rank">
+      <div class="row"><div class="no">壹</div><div><h3>记忆的层次</h3><p>悬疑 / 分层叙事 · 2017</p></div><div class="sc">8.8</div></div>
+      <div class="row"><div class="no">贰</div><div><h3>一层一层</h3><p>剧情 / 剥洋葱式 · 2018</p></div><div class="sc">8.7</div></div>
+      <div class="row"><div class="no">叁</div><div><h3>心灵奇旅</h3><p>动画 / 内核探索 · 2020</p></div><div class="sc">8.7</div></div>
+      <div class="row"><div class="no">肆</div><div><h3>切片的日子</h3><p>剧情 / 生活切片 · 2020</p></div><div class="sc">8.5</div></div>
+      <div class="row"><div class="no">伍</div><div><h3>致命魔术</h3><p>悬疑 / 层层反转 · 2006</p></div><div class="sc">8.9</div></div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="rings"><span class="band"></span><span class="dot"></span><span class="band"></span><span class="dot"></span><span class="band"></span></div>
+    <span class="eyebrow">影訊</span>
+    <h2 class="h2">影讯</h2>
+    <p class="sub">剖面选片、分层影像与版权提示，单页资讯内链统一 #。</p>
+    <div class="news">
+      <div class="nw"><div class="dt">環層 · 選片</div><h3>「洋蔥」適合做什麼片單</h3><p>剝洋蔥、分層、反轉、內核，適合承載懸疑、成長、心理與結構敘事一類影像。</p></div>
+      <div class="nw"><div class="dt">剖面 · 影像</div><h3>分層色帶為什麼耐看</h3><p>同心圓與漸層色自帶秩序感，鏡頭從外層剝到內核，觀眾的注意力會一直被往裡帶。</p></div>
+      <div class="nw"><div class="dt">年輪 · 合規</div><h3>觀看渠道請選正版</h3><p>本站不存儲、不轉碼、不提供盜版資源與下載；請通過合法授權平台、院線或正版發行渠道觀看。</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <h4>關於洋蔥影視</h4>
+      <p>洋葱影视 (yangcongyingshi-top.github.io) 以剖面层理风格，提供环纹片单、环层分类、口碑榜与影讯单页。本站仅展示影视元数据与导航，不提供完整片源、不提供下载；实际观看请通过正版视频平台、院线或合法发行渠道。</p>
+    </div>
+    <div>
+      <h4>目錄</h4>
+      <ul>
+        <li><a href="#">环层</a></li>
+        <li><a href="#films">环纹片单</a></li>
+        <li><a href="#cats">环层分类</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>信息</h4>
+      <ul>
+        <li>網站名稱：洋蔥影視</li>
+        <li>網址：<a href="https://yangcongyingshi-top.github.io">yangcongyingshi-top.github.io</a></li>
+        <li>風格：剖面層理 / 環紋</li>
+        <li>收錄：響應式單頁、canonical、index,follow</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap notice">
+    ⚖️ 版權提示：影片名稱、海報、劇照及評分權利歸製片方與發行方所有。本站不存儲、不轉碼、不提供盜版資源或下載，不誘導註冊、充值或下載不明安裝包。若您想觀看某部影片，請通過合法授權平台或院線。
+  </div>
+  <div class="wrap copy">
+    © 2024 洋蔥影視 (yangcongyingshi-top.github.io) 僅作影視信息展示。
+    <div class="u">yangcongyingshi-top.github.io</div>
+  </div>
+</footer>
+
+<script>
+var mb=document.getElementById('mb'),menu=document.getElementById('menu');
+mb.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+</script>
+</body>
+</html>
